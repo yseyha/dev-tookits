@@ -14,22 +14,31 @@ function Header() {
 
         <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a href="/" className="nav-link px-2 link-secondary">
+            <a href="/dev-toolkits" className="nav-link px-2 link-secondary">
               Home
             </a>
           </li>
           <li>
-            <a href="/privacy" className="nav-link px-2 link-secondary">
+            <a
+              href="/dev-toolkits/privacy"
+              className="nav-link px-2 link-secondary"
+            >
               Privacy & Policy
             </a>
           </li>
           <li>
-            <a href="/terms" className="nav-link px-2 link-secondary">
+            <a
+              href="/dev-toolkits/terms"
+              className="nav-link px-2 link-secondary"
+            >
               Terms & Conditions
             </a>
           </li>
           <li>
-            <a href="/contact" className="nav-link px-2 link-secondary">
+            <a
+              href="/dev-toolkits/contact"
+              className="nav-link px-2 link-secondary"
+            >
               Contact
             </a>
           </li>

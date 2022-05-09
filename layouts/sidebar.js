@@ -3,24 +3,28 @@ function SideBar() {
     <>
       <h4 className="mb-3">More Tools</h4>
       <nav className="nav flex-column">
-        <a className="nav-link active" aria-current="pagez" href="/">
+        <a
+          className="nav-link active"
+          aria-current="pagez"
+          href="/dev-toolkits"
+        >
           Count Characters
         </a>
         <a
           className="nav-link"
           aria-current="pagez"
-          href="/capitalize-sentenses"
+          href="/dev-toolkits/capitalize-sentenses"
         >
           Capitalize Sentences
         </a>
-        <a className="nav-link" href="/javascipt-to-json">
+        <a className="nav-link" href="/dev-toolkits/javascipt-to-json">
           Convert Javascript Object to JSON
         </a>
-        <a className="nav-link" href="/file-to-buffer">
+        <a className="nav-link" href="/dev-toolkits/file-to-buffer">
           Convert Files to Buffer
         </a>
         <a className="nav-link disabled">JSON to Params URL</a>
-        <a className="nav-link" href="/utc-to-local-date">
+        <a className="nav-link" href="/dev-toolkits/utc-to-local-date">
           UTC date to Local date
         </a>
         <a className="nav-link disabled">QR Code Generator</a>

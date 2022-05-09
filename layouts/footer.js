@@ -11,22 +11,31 @@ function Footer() {
       <footer className="py-3 my-4">
         <ul className="nav justify-content-center border-bottom pb-3 mb-3">
           <li className="nav-item">
-            <a href="/" className="nav-link px-2 text-muted">
+            <a href="/dev-toolkits" className="nav-link px-2 text-muted">
               Home
             </a>
           </li>
           <li className="nav-item">
-            <a href="/privacy.html" className="nav-link px-2 text-muted">
+            <a
+              href="/dev-toolkits/privacy.html"
+              className="nav-link px-2 text-muted"
+            >
               Privacy & Policy
             </a>
           </li>
           <li className="nav-item">
-            <a href="/terms.html" className="nav-link px-2 text-muted">
+            <a
+              href="/dev-toolkits/terms.html"
+              className="nav-link px-2 text-muted"
+            >
               Terms & Conditions
             </a>
           </li>
           <li className="nav-item">
-            <a href="/contact" className="nav-link px-2 text-muted">
+            <a
+              href="/dev-toolkits/contact.html"
+              className="nav-link px-2 text-muted"
+            >
               Contact
             </a>
           </li>
