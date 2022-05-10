@@ -23,16 +23,7 @@ function SideBar() {
         <a className="nav-link" href="/utc-to-local-date">
           UTC date to Local date
         </a>
-//         <a className="nav-link disabled">QR Code Generator</a>
         <a className="nav-link disabled">Password Generator</a>
-//         <a className="nav-link disabled">Encrypt & Decrypt Text</a>
-        {/* <div className="text-center mt-5">
-          <img
-            src="https://images.placeholders.dev/?width=350&height=550&text=&fontSize=36&bgColor=%23f7f6f6&textColor=%236d6e71"
-            className="d-block mx-auto rounded text-center img-fluid"
-            loading="lazy"
-          />
-        </div> */}
       </nav>
     </>
   );
