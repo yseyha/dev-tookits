@@ -21,9 +21,6 @@ function Content() {
         },
         false
       );
-
-      // reader.readAsDataURL(e.target.files[0]);
-      // reader.readAsArrayBuffer(e.target.files[0]);
       reader.readAsDataURL(e.target.files[0]);
     }
   };
@@ -47,29 +44,12 @@ function Content() {
 
       <form className="row g-3 form-group files color" method="post" action="#">
         <div className="">
-          {/* <label>Upload Your File </label> */}
           <input
             type="file"
             className="form-control"
             onChange={handleChangeFile}
           />
         </div>
-        {/* <div className="col-auto">
-          <button
-            type="button"
-            className="btn btn-success me-3 fw-bold"
-            onClick={convertToBuffer}
-          >
-            Convert
-          </button>
-          <button
-            type="button"
-            className="btn btn-danger me-3 fw-bold"
-            onClick={(e) => setResult("")}
-          >
-            Clear
-          </button>
-        </div> */}
       </form>
 
       <form className="row g-3">
@@ -101,13 +81,6 @@ function Content() {
         </div>
       </form>
 
-      {/* <div className="text-center mt-5">
-        <img
-          src="https://images.placeholders.dev/?width=1080&height=150&text=Advertise%20here&bgColor=%23f7f6f6&textColor=%236d6e71"
-          className="d-block mx-auto rounded text-center img-fluid"
-          loading="lazy"
-        />
-      </div> */}
       <>
         {/* toast */}
         <div

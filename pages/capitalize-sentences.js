@@ -6,12 +6,6 @@ function Content() {
 
   const capitalizeCase = (e) => {
     e.preventDefault();
-    // Method 1
-    // var string = chars.toLowerCase().split(" ");
-    // for (var i = 0; i < string.length; i++) {
-    //   string[i] = string[i][0].toUpperCase() + string[i].slice(1);
-    // }
-
     // Method 2
     var string = chars
       .trim()
@@ -41,9 +35,6 @@ function Content() {
 
   const sentenceCase = (e) => {
     e.preventDefault();
-    // console.log(chars.split(/[\s,][\s?]+/));
-    console.log(chars.trim().toLowerCase().split("."));
-    console.log(chars.trim().toLowerCase().split("?"));
     // Method 1
     var string = chars
       .trim()
@@ -161,13 +152,6 @@ function Content() {
         </div>
       </form>
 
-      {/* <div className="text-center mt-5">
-        <img
-          src="https://images.placeholders.dev/?width=1080&height=150&text=Advertise%20here&bgColor=%23f7f6f6&textColor=%236d6e71"
-          className="d-block mx-auto rounded text-center img-fluid"
-          loading="lazy"
-        />
-      </div> */}
       <>
         {/* toast */}
         <div

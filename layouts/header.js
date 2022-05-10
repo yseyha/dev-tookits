@@ -47,13 +47,6 @@ function Header() {
           </a>
         </div>
       </header>
-      {/* <div className="text-center mt-5 mb-5">
-        <img
-          src="https://images.placeholders.dev/?width=1080&height=150&text=Advertise%20here&bgColor=%23f7f6f6&textColor=%236d6e71"
-          className="d-block mx-auto rounded text-center img-fluid"
-          loading="lazy"
-        />
-      </div> */}
     </>
   );
 }

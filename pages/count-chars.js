@@ -12,7 +12,7 @@ function Content() {
     setSize(textSize === 1 ? `${textSize} byte` : `${textSize} bytes`);
     if (textSize > 1e6) {
       setSize(`${(textSize / 1e6).toFixed(2)} Mb`);
-      // Kilobytes
+      // Megabytes
     } else if (textSize > 1e3) {
       setSize(`${(textSize / 1e3).toFixed(2)} Kb`);
       // Kilobytes
@@ -77,14 +77,6 @@ function Content() {
           </button>
         </div>
       </form>
-
-      {/* <div className="text-center mt-5">
-        <img
-          src="https://images.placeholders.dev/?width=1080&height=150&text=Advertise%20here&bgColor=%23f7f6f6&textColor=%236d6e71"
-          className="d-block mx-auto rounded text-center img-fluid"
-          loading="lazy"
-        />
-      </div> */}
     </>
   );
 }
