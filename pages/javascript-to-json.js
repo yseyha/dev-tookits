@@ -66,7 +66,7 @@ function Content() {
         <div className="">
           <textarea
             className="form-control"
-            rows="12"
+            rows="18"
             placeholder={placeholderInput || "Javascript Object..."}
             onChange={(e) => covertToJson(e)}
             value={chars}
@@ -109,7 +109,7 @@ function Content() {
         <div className="">
           <textarea
             className="form-control"
-            rows="12"
+            rows="18"
             placeholder={placeholderOutput || "Result here..."}
             defaultValue={result}
             style={stypeEditor}
