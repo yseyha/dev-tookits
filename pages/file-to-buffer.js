@@ -38,6 +38,20 @@ function Content() {
     }, "3000");
   };
 
+  const stypeEditor = {
+    color: "#d63384",
+    background: "#f4f5f7",
+    borderRadius: "10px",
+    fontFamily: "monospace",
+    fontSize: "1em",
+    fontWeight: "400",
+    minHeight: "240px",
+    letterSpacing: "normal",
+    lineHeight: "20px",
+    padding: "20px",
+    tabSize: 4,
+  };
+
   return (
     <>
       <h2 className="mb-3">Covert File to Buffer</h2>
@@ -54,7 +68,7 @@ function Content() {
 
       <form className="row g-3">
         <div className="col-12 mt-5">
-          <h4 className="float-start">Results : </h4>
+          <h4 className="float-start">Output : </h4>
           {loading ? (
             <div className="ms-3 spinner-border text-primary" role="status">
               <span className="sr-only"></span>
@@ -74,9 +88,10 @@ function Content() {
         <div className="">
           <textarea
             className={`form-control`}
-            rows="12"
+            rows="18"
             placeholder="Results here..."
             defaultValue={result}
+            style={stypeEditor}
           />
         </div>
       </form>

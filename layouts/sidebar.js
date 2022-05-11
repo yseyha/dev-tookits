@@ -19,7 +19,9 @@ function SideBar() {
         <a className="nav-link" href="/file-to-buffer">
           Convert Files to Buffer
         </a>
-        <a className="nav-link disabled">JSON to Params URL</a>
+        <a className="nav-link" href="/json-to-url-param">
+          JSON to Params URL
+        </a>
         <a className="nav-link" href="/utc-to-local-date">
           UTC date to Local date
         </a>

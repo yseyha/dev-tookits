@@ -1,0 +1,18 @@
+.container {
+    max-width: 1280px;
+}
+
+.textAreaCode {
+    color: "#d63384";
+    /* background: "#282a36"; */
+    background: "#f4f5f7";
+    border-radius: "10px";
+    font-family: "monospace";
+    font-size: "1em";
+    font-weight: "400";
+    min-height: "240px";
+    letter-spacing: "normal";
+    line-height: "20px";
+    padding: "20px";
+    tab-size: 4;
+  };

@@ -3,21 +3,14 @@ function Content() {
   const [result, setResult] = React.useState("");
   const [show, setShow] = React.useState(false);
 
-  const placeholderInput = `{
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
-}`;
+  let options = {
+    arrayFormat: "brackets",
+    encode: false,
+    skipNull: true,
+    skipEmptyString: true,
+  };
 
-  const placeholderOutput = `{
-    "firstName": "John",
-    "lastName": "Doe",
-    "age": 50,
-    "eyeColor": "blue"
-}`;
-
-  const covertToJson = (e) => {
+  const toUrlParams = (e) => {
     // on change textarea
     if (e.target.value) setChars(e.target.value);
     else if (e.target.value === "") {
@@ -26,23 +19,14 @@ function Content() {
       return;
     }
 
-    let output;
-    let errorMsg = 'Syntax Error! "Invalid input"';
-    let jsObject = e.target.value || chars;
-    jsObject = jsObject.trim().split(" ").join("");
-
-    if (!jsObject.startsWith("{") || !jsObject.endsWith("}")) {
-      output = errorMsg;
-    } else {
-      try {
-        eval(`jsObject = ${jsObject}`);
-        output = JSON.stringify(jsObject, null, 4);
-      } catch (error) {
-        output = errorMsg;
-      }
+    let urlParams;
+    try {
+      urlParams = Qs.stringify(JSON.parse(e.target.value || chars), options);
+    } catch (error) {
+      urlParams = 'Syntax Error! "Invalid input"';
     }
 
-    setResult(output);
+    setResult(urlParams);
   };
 
   const copyToClipboard = () => {
@@ -53,8 +37,18 @@ function Content() {
     }, "3000");
   };
 
+  const placeholderInput = `{
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+}`;
+
+  const placeholderOutput = `firstName=John&lastName=Doe&age=50&eyeColor=blue`;
+
   const stypeEditor = {
     color: "#d63384",
+    // background: "#282a36",
     background: "#f4f5f7",
     borderRadius: "10px",
     fontFamily: "monospace",
@@ -69,15 +63,16 @@ function Content() {
 
   return (
     <>
-      <h2 className="mb-3">Convert Javascript Object to JSON</h2>
+      <h2 className="mb-3">Convert JSON to URL Params</h2>
 
       <form className="row g-3">
         <div className="col-12 mt-5">
           <h4 className="float-start">Input :</h4>
           <button
             type="button"
-            className="btn btn-danger me-3 fw-bold float-end"
+            className="btn btn-danger fw-bold float-end"
             onClick={(e) => {
+              e.preventDefault();
               setChars("");
               setResult("");
             }}
@@ -89,8 +84,8 @@ function Content() {
           <textarea
             className="form-control"
             rows="18"
-            placeholder={placeholderInput || "Javascript Object..."}
-            onChange={covertToJson}
+            placeholder={placeholderInput}
+            onChange={toUrlParams}
             value={chars}
             style={stypeEditor}
           ></textarea>
@@ -99,7 +94,7 @@ function Content() {
 
       <form className="row g-3">
         <div className="col-12 mt-5">
-          <h4 className="float-start">Results :</h4>
+          <h4 className="float-start">Result :</h4>
           <button
             type="button"
             className="btn btn-primary fw-bold float-end"
@@ -113,7 +108,7 @@ function Content() {
           <textarea
             className="form-control"
             rows="18"
-            placeholder={placeholderOutput || "Result here..."}
+            placeholder={placeholderOutput}
             defaultValue={result}
             style={stypeEditor}
           />

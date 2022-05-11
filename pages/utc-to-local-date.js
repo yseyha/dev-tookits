@@ -136,7 +136,7 @@ function Content() {
         <div className="col-auto mt-3">
           <button
             type="button"
-            className="btn btn-info me-3 fw-bold"
+            className="btn btn-success me-3 fw-bold"
             onClick={isoToLocalDate}
           >
             Set Current ISO Date
