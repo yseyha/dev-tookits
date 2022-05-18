@@ -36,7 +36,7 @@ function Content() {
           <textarea
             className="form-control"
             id="countCharactersTextarea"
-            rows="12"
+            rows="16"
             placeholder="Text here..."
             onChange={(e) => countChar(e)}
           ></textarea>
