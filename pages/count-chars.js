@@ -78,13 +78,12 @@ function Content() {
         </div>
       </form>
     
-    <br></br><br></br><br></br>
-    <hr className="mt-3"></hr>
-    <h5 className="mt-4">About this tool</h5>
-    <p>
-      Character Count Online is a free online character, word, sentense counting and character size tool.
-      All results are showing immediately and it is ridiculously easy to use and the tool is completely free.
-    </p>
+    <div class="card bg-light mt-5 p-2 text-black-75">
+      <div class="card-body">
+        <h5 class="card-title">About this tool</h5>
+        <p class="card-text">Character Count Online is a free online character, word, sentense counting and character size tool. All results are showing immediately and it is ridiculously easy to use and the tool is completely free.</p>
+      </div>
+    </div>
     </>
   );
 }
