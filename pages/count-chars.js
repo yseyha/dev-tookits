@@ -77,8 +77,10 @@ function Content() {
           </button>
         </div>
       </form>
-
-    <h4 className="mt-5">About this tool</h4>
+    
+    <hr className="mt-5"></hr>
+    <hr className="mt-3"></hr>
+    <h4 className="mt-4">About this tool</h4>
     <p>
       Character Count Online is a free online character, word, sentense counting and character size tool.
       All results are showing immediately and it is ridiculously easy to use and the tool is completely free.
