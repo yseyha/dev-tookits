@@ -96,6 +96,25 @@ function Content() {
         </div>
       </form>
 
+      <div class="card bg-light mt-5 p-2 text-black-75">
+        <div class="card-body">
+          <h5 class="card-title">About this tool</h5>
+          <p class="card-text">
+            Convert File to Buffer Online is a free online tool that turns a
+            file to buffer string or text. To convert you need to upload or drag
+            a file to upload file area and it's will automaticaly covert to
+            buffer string. Result will showing immediately on resutls box and it
+            is ridiculously easy to use and the tool is completely free.
+            <br />
+            <br />
+            <i>
+              ***Note: You file will not upload to our server. All converting
+              proccess is on your device.
+            </i>
+          </p>
+        </div>
+      </div>
+
       <>
         {/* toast */}
         <div
