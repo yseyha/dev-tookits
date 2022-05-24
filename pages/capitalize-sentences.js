@@ -152,6 +152,38 @@ function Content() {
         </div>
       </form>
 
+      <div className="card bg-light mt-5 p-2 text-black-75">
+        <div className="card-body">
+          <h5 className="card-title">About this tool</h5>
+
+          <p className="card-text">
+            Title Case - Capitalize only the words that should be capitalized
+            according to the top tab style guide.
+          </p>
+
+          <p className="card-text">
+            Sentence Case: Capitalize only the first word of each sentence.
+          </p>
+
+          <p className="card-text">
+            Uppercase - Convert your title from lowercase to uppercase.
+          </p>
+
+          <p className="card-text">
+            Lowercase - Convert your title from uppercase to lowercase.
+          </p>
+
+          <p className="card-text">
+            First Letter - Capitalize the first letter of every word.
+          </p>
+
+          <p className="card-text">
+            Or if you’ve received some text where everything is all caps then
+            use this tool to quickly bring the text back to a readable state.
+          </p>
+        </div>
+      </div>
+
       <>
         {/* toast */}
         <div
