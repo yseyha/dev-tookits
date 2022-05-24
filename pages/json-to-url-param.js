@@ -114,6 +114,27 @@ function Content() {
           />
         </div>
       </form>
+
+      <div class="card bg-light mt-5 p-2 text-black-75">
+        <div class="card-body">
+          <h5 class="card-title">About this tool</h5>
+          <p class="card-text">
+            Convert JSON to urlParams Online is a free online tool that turns a
+            JSON to HTTP Query string. To convert you just paste or write on
+            input text area and it's will covert automaticaly to url params.
+            Result will showing immediately on resutls box and it is
+            ridiculously easy to use and the tool is completely free.
+            <br />
+            <br />
+            <i>
+              ***Note: Your JSON data is secure. Our tool does not send your
+              JSON data to our servers for conversion, the process is done
+              completely in your web browser. That's what makes our tools safe
+              and fast tool.
+            </i>
+          </p>
+        </div>
+      </div>
       <>
         {/* toast */}
         <div
