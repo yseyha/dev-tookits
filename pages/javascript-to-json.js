@@ -119,6 +119,20 @@ function Content() {
           />
         </div>
       </form>
+
+      <div class="card bg-light mt-5 p-2 text-black-75">
+        <div class="card-body">
+          <h5 class="card-title">About this tool</h5>
+          <p class="card-text">
+            Character Count Online is a free online tool that turns a Javascript
+            object into JSON text and stores that JSON text in a string. You can
+            wirte or paste js object to input textarea and result will showing
+            immediately on resutls box and it is ridiculously easy to use and
+            the tool is completely free.
+          </p>
+        </div>
+      </div>
+
       <>
         {/* toast */}
         <div
