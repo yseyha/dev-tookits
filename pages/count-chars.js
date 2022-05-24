@@ -78,7 +78,7 @@ function Content() {
         </div>
       </form>
     
-    <hr className="mt-5"></hr>
+    <br className="mt-5"></br>
     <hr className="mt-3"></hr>
     <h4 className="mt-4">About this tool</h4>
     <p>
