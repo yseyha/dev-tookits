@@ -150,6 +150,20 @@ function Content() {
           </button>
         </div>
       </form>
+
+      <div class="card bg-light mt-5 p-2 text-black-75">
+        <div class="card-body">
+          <h5 class="card-title">About this tool</h5>
+          <p class="card-text">
+            Convert UTC time to Local time Online is a free online tool that
+            turns coordinated universal time to your local time. To convert you
+            just paste or write on input text area and it's will covert
+            automaticaly. Result will showing immediately on resutls box and it
+            is ridiculously easy to use and the tool is completely free.
+          </p>
+        </div>
+      </div>
+
       <>
         {/* toast */}
         <div
