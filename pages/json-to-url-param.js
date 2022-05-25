@@ -63,10 +63,10 @@ function Content() {
 
   return (
     <>
-      <h4 className="mb-3">Convert JSON to URL Params</h4>
+      <h4 className="">Convert JSON to URL Params</h4>
 
       <form className="row g-3">
-        <div className="col-12 mt-5">
+        <div className="col-12 mt-3">
           <h4 className="float-start">Input :</h4>
           <button
             type="button"
