@@ -69,10 +69,10 @@ function Content() {
 
   return (
     <>
-      <h2 className="mb-3">Convert Javascript Object to JSON</h2>
+      <h4 className="">Convert Javascript Object to JSON</h4>
 
       <form className="row g-3">
-        <div className="col-12 mt-5">
+        <div className="col-12 mt-3">
           <h4 className="float-start">Input :</h4>
           <button
             type="button"

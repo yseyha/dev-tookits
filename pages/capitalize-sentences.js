@@ -76,7 +76,7 @@ function Content() {
 
   return (
     <>
-      <h2 className="mb-3">Capitalize Sentences</h2>
+      <h4 className="mb-3">Capitalize Sentences</h4>
 
       <form className="row g-3">
         <div className="">

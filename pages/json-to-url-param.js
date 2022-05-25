@@ -63,7 +63,7 @@ function Content() {
 
   return (
     <>
-      <h2 className="mb-3">Convert JSON to URL Params</h2>
+      <h4 className="mb-3">Convert JSON to URL Params</h4>
 
       <form className="row g-3">
         <div className="col-12 mt-5">

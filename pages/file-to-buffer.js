@@ -54,7 +54,7 @@ function Content() {
 
   return (
     <>
-      <h2 className="mb-3">Covert File to Buffer</h2>
+      <h4 className="mb-3">Covert File to Buffer</h4>
 
       <form className="row g-3 form-group files color" method="post" action="#">
         <div className="">

@@ -1,48 +1,25 @@
 function Content() {
-  const [utc, setUTC] = React.useState("");
+  const [utc, setUTC] = React.useState(new Date().toUTCString());
   const [localResult, setLocalResult] = React.useState("");
 
   const [local, setLocal] = React.useState("");
-  const [iso, setISO] = React.useState("");
+  const [iso, setISO] = React.useState(new Date().toISOString());
 
   const [show, setShow] = React.useState(false);
 
   const utcToLocalDate = (e) => {
-    if (e.preventDefault() && e.target.value) {
-      setUTC(e.target.value);
-      var result = new Date(e.target.value).toLocaleString();
-      setLocalResult(result || "Invalid date");
-    } else {
-      var now = new Date();
-      setUTC(now.toUTCString());
-      setLocalResult(now.toLocaleString());
-    }
-  };
-
-  const localToUTC = (e) => {
     e.preventDefault();
-    setLocalResult(e.target.value);
-    var result = new Date(e.target.value).toUTCString();
-    setUTC(result || "Invalid date");
+
+    var result = new Date(e.target.value).toLocaleString();
+    setLocalResult(result || "Invalid date");
+    setUTC(e.target.value);
   };
 
   const isoToLocalDate = (e) => {
-    if (e.preventDefault() && e.target.value) {
-      setISO(e.target.value);
-      var result = new Date(e.target.value).toLocaleString();
-      setLocal(result || "Invalid date");
-    } else {
-      var now = new Date();
-      setISO(now.toISOString());
-      setLocal(now.toLocaleString());
-    }
-  };
-
-  const localToISO = (e) => {
     e.preventDefault();
-    setLocal(e.target.value);
-    var result = new Date(e.target.value).toISOString();
-    setISO(result || "Invalid date");
+    var result = new Date(e.target.value).toLocaleString();
+    setLocal(result || "Invalid date");
+    setISO(e.target.value);
   };
 
   const copyToClipboard = () => {
@@ -63,9 +40,9 @@ function Content() {
 
   return (
     <>
-      <h2 className="mb-4">Convert UTC to Local date</h2>
+      <h4 className="mb-4">Convert UTC to Local date</h4>
 
-      <form method="post" action="#">
+      <form method="post" action="#" className="clearfix">
         <div className="row form-row">
           <div className="form-group col-md-6">
             <label>UTC Date</label>
@@ -83,19 +60,11 @@ function Content() {
               className="form-control mt-2"
               placeholder={new Date().toLocaleString()}
               value={localResult}
-              onChange={localToUTC}
             />
           </div>
         </div>
 
         <div className="col-auto mt-3">
-          <button
-            type="button"
-            className="btn btn-success me-3 fw-bold"
-            onClick={utcToLocalDate}
-          >
-            Set Current UTC Date
-          </button>
           <button
             type="button"
             className="btn btn-primary fw-bold float-end"
@@ -106,11 +75,9 @@ function Content() {
         </div>
       </form>
 
-      <hr className="mt-5"></hr>
+      <h4 className="mt-5 mb-4">Convert ISO to Local date</h4>
 
-      <h2 className="mt-5 mb-4">Convert ISO to Local date</h2>
-
-      <form method="post" action="#">
+      <form method="post" action="#" className="clearfix">
         <div className="row form-row">
           <div className="form-group col-md-6">
             <label>ISO Date</label>
@@ -128,19 +95,11 @@ function Content() {
               className="form-control mt-2"
               placeholder={new Date().toLocaleString()}
               value={local}
-              onChange={localToISO}
             />
           </div>
         </div>
 
         <div className="col-auto mt-3">
-          <button
-            type="button"
-            className="btn btn-success me-3 fw-bold"
-            onClick={isoToLocalDate}
-          >
-            Set Current ISO Date
-          </button>
           <button
             type="button"
             className="btn btn-primary fw-bold float-end"

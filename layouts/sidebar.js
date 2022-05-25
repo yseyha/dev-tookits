@@ -25,7 +25,9 @@ function SideBar() {
         <a className="nav-link" href="/utc-to-local-date">
           UTC date to Local date
         </a>
-        {/* <a className="nav-link disabled">Password Generator</a> */}
+        <a className="nav-link" href="/text-to-speech">
+          Convert Text to Speech
+        </a>
       </nav>
     </>
   );
