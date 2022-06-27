@@ -14,7 +14,7 @@ function SideBar() {
           Capitalize Sentences
         </a>
         <a className="nav-link" href="/javascript-to-json">
-          Convert Javascript Object to JSON
+          Javascript Object to JSON
         </a>
         <a className="nav-link" href="/file-to-buffer">
           Convert Files to Buffer
