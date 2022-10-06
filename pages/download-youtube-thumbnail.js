@@ -1,13 +1,18 @@
 function Content() {
-  const [videoURL, setVideoURL] = React.useState("");
-  const [imgURL, setImgURL] = React.useState({ HD: "", SD: "", SM: "" });
-  const [show, setShow] = React.useState(false);
+  const [inputURL, setInputURL] = React.useState(
+    "https://youtu.be/Ct6BUPvE2sM"
+  );
+  const [imgURL, setImgURL] = React.useState({});
 
   const getThumbnailsURL = (e) => {
-    e.preventDefault();
+    let url = "";
+    e && e.preventDefault();
+    if (e && e.target && e.target.value) {
+      url = e.target.value;
+      setInputURL(e.target.value);
+    } else url = inputURL;
+
     try {
-      let url = e.target.value;
-      const remove_url = "https://www.youtube.com/watch?v=";
       const b = "https://youtu.be/";
       const base_url = "https://img.youtube.com/vi/";
 
@@ -16,8 +21,6 @@ function Content() {
 
       if (url.includes("?")) url = url.split("?")[0];
       if (url.includes("&")) url = url.split("&")[0];
-
-      console.log(url);
 
       setImgURL([
         {
@@ -46,6 +49,10 @@ function Content() {
     }
   };
 
+  React.useEffect(() => {
+    getThumbnailsURL();
+  }, []);
+
   return (
     <>
       <h4 className="mb-4">Youtube Thumbnail Downloader</h4>
@@ -57,7 +64,7 @@ function Content() {
             <input
               type="email"
               className="form-control mt-2"
-              placeholder="https://www.youtube.com/watch?v=Hx6WCSe6-u8"
+              placeholder="https://youtu.be/Ct6BUPvE2sM"
               onChange={getThumbnailsURL}
             />
           </div>
@@ -67,7 +74,7 @@ function Content() {
           <button
             type="button"
             className="btn btn-primary fw-bold"
-            defaultValue="https://youtube.com/watch?v=WNL3zDgWZc0"
+            value={inputURL}
             onClick={getThumbnailsURL}
           >
             Get Thumbnails
@@ -75,7 +82,7 @@ function Content() {
         </div>
       </form>
 
-      <h4 className="mt-5">Available Thumbnails :</h4>
+      {/* <h4 className="mt-5">Available Thumbnails :</h4> */}
 
       <div className="row">
         {imgURL.length &&
@@ -106,26 +113,6 @@ function Content() {
           </p>
         </div>
       </div>
-
-      <>
-        {/* toast */}
-        <div
-          className={`toast align-items-center fade ${
-            show ? "show" : ""
-          } float-end position-fixed bottom-0 end-0 p-3 border-0 bg-transparent shadow-none`}
-          style={{ zIndex: 11 }}
-        >
-          <div className="d-flex text-white bg-primary bg-opacity-75 rounded">
-            <div className="toast-body">Copied to clipboard!</div>
-            <button
-              type="button"
-              className="btn-close btn-close-white me-2 m-auto"
-              data-bs-dismiss="toast"
-              aria-label="Close"
-            ></button>
-          </div>
-        </div>
-      </>
     </>
   );
 }
