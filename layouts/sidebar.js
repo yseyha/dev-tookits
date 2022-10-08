@@ -23,6 +23,9 @@ function SideBar() {
         <a className="nav-link" href="/javascript-to-json">
           Javascript Object to JSON
         </a>
+        <a className="nav-link" href="/xml-to-json">
+          XML to JSON
+        </a>
         <a className="nav-link" href="/file-to-buffer">
           Convert Files to Buffer
         </a>

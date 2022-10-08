@@ -3,21 +3,51 @@ function Content() {
   const [result, setResult] = React.useState("");
   const [show, setShow] = React.useState(false);
 
-  const placeholderInput = `{
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
-}`;
+  const placeholderInput = `<XmlDocument>
+	<MyXmlElements myAttribute="ABC">
+		<Value>
+			This is my value
+		</Value>
+		<Value>
+			And here's another
+		</Value>
+	</MyXmlElements>
+	<NumericElement>
+		123.456
+	</NumericElement>
+</XmlDocument>`;
 
   const placeholderOutput = `{
-    "firstName": "John",
-    "lastName": "Doe",
-    "age": 50,
-    "eyeColor": "blue"
-}`;
+    "XmlDocument": {
+      "MyXmlElements": {
+        "myAttribute": "ABC",
+        "MyXmlElements": [
+          "This is my value",
+          "And here's another"
+        ]
+      },
+      "NumericElement": 123.456
+    }
+  }`;
 
-  const covertToJson = (e) => {
+  const apiCall = async (data) => {
+    try {
+      // const xml = window.btoa(unescape(encodeURIComponent(data.xml)));
+      const url =
+        "https://bi0x9oq8j3.execute-api.ap-southeast-1.amazonaws.com/dev/xmlToJson";
+      const response = await fetch(url, {
+        method: "POST",
+        // mode: "no-cors",
+        headers: { "Content-Type": "text/xml; charset=utf-8" },
+        body: data.xml,
+      });
+      return response.json();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const covertToJson = async (e) => {
     // on change textarea
     if (e.target.value) setChars(e.target.value);
     else if (e.target.value === "") {
@@ -28,15 +58,15 @@ function Content() {
 
     let output;
     let errorMsg = 'Syntax Error! "Invalid input"';
-    let jsObject = e.target.value || chars;
-    jsObject = jsObject.trim().split(" ").join("");
+    let xml = e.target.value || chars;
+    // xml = xml.trim().split(" ").join("");
 
-    if (!jsObject.startsWith("{") || !jsObject.endsWith("}")) {
+    if (!xml.startsWith("<") || !xml.endsWith(">")) {
       output = errorMsg;
     } else {
       try {
-        eval(`jsObject = ${jsObject}`);
-        output = JSON.stringify(jsObject, null, 4);
+        const res = await apiCall({ xml });
+        output = JSON.stringify(res, null, 4);
       } catch (error) {
         output = errorMsg;
       }
@@ -69,7 +99,7 @@ function Content() {
 
   return (
     <>
-      <h4 className="">Convert Javascript Object to JSON</h4>
+      <h4 className="">Convert XML to JSON</h4>
 
       <form className="row g-3">
         <div className="col-12 mt-3">
@@ -124,11 +154,10 @@ function Content() {
         <div class="card-body">
           <h5 class="card-title">About this tool</h5>
           <p class="card-text">
-            Javascript Object to JSON Online is a free online tool that turns a
-            Javascript object into JSON text and stores that JSON text in a
-            string. You can wirte or paste js object to input textarea and
-            result will showing immediately on resutls box and it is
-            ridiculously easy to use and the tool is completely free.
+            XML to JSON is a free online tool that turns a XML into JSON text
+            and stores that JSON text in a string. You can wirte or paste js XML
+            to input textarea and result will showing immediately on resutls box
+            and it is ridiculously easy to use and the tool is completely free.
           </p>
         </div>
       </div>

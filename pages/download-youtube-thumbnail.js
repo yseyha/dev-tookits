@@ -17,6 +17,7 @@ function Content() {
       const base_url = "https://img.youtube.com/vi/";
 
       if (url.includes("watch?v=")) url = url.split("watch?v=")[1];
+      else if (url.includes("shorts/")) url = url.split("shorts/")[1];
       else if (url.startsWith(b)) url = url.replace(b, "");
 
       if (url.includes("?")) url = url.split("?")[0];
