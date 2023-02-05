@@ -1,7 +1,7 @@
 function SideBar() {
   return (
     <>
-      <h4 className="mb-3">More Tools</h4>
+      <h4 className="mb-3">Dev Tools</h4>
       <nav className="nav flex-column">
         <a className="nav-link active" aria-current="pagez" href="/">
           Count Characters
