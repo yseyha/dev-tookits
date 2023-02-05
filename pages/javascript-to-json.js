@@ -11,10 +11,10 @@ function Content() {
 }`;
 
   const placeholderOutput = `{
-    "firstName": "John",
-    "lastName": "Doe",
-    "age": 50,
-    "eyeColor": "blue"
+  "firstName": "John",
+  "lastName": "Doe",
+  "age": 50,
+  "eyeColor": "blue"
 }`;
 
   const covertToJson = (e) => {
@@ -29,14 +29,14 @@ function Content() {
     let output;
     let errorMsg = 'Syntax Error! "Invalid input"';
     let jsObject = e.target.value || chars;
-    jsObject = jsObject.trim().split(" ").join("");
+    jsObject = jsObject.trim();
 
     if (!jsObject.startsWith("{") || !jsObject.endsWith("}")) {
       output = errorMsg;
     } else {
       try {
         eval(`jsObject = ${jsObject}`);
-        output = JSON.stringify(jsObject, null, 4);
+        output = JSON.stringify(jsObject, null, 2);
       } catch (error) {
         output = errorMsg;
       }
