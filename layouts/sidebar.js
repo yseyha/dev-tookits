@@ -43,13 +43,13 @@ function SideBar() {
         >
           Download Youtube Thumbnail
         </a>
-        <a
+        {/* <a
           className="nav-link active"
           aria-current="pagez"
           href="/download-instagram-image"
         >
           Download Instagram Photo
-        </a>
+        </a> */}
       </nav>
     </>
   );
