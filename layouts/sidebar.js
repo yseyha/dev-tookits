@@ -3,13 +3,6 @@ function SideBar() {
     <>
       <h4 className="mb-3">More Tools</h4>
       <nav className="nav flex-column">
-        <a
-          className="nav-link active"
-          aria-current="pagez"
-          href="/download-youtube-thumbnail"
-        >
-          Download Youtube Thumbnail
-        </a>
         <a className="nav-link active" aria-current="pagez" href="/">
           Count Characters
         </a>
@@ -37,6 +30,25 @@ function SideBar() {
         </a>
         <a className="nav-link" href="/text-to-speech">
           Convert Text to Speech
+        </a>
+      </nav>
+
+      <br></br>
+      <h4 className="mb-3">Other Tools</h4>
+      <nav className="nav flex-column">
+        <a
+          className="nav-link active"
+          aria-current="pagez"
+          href="/download-youtube-thumbnail"
+        >
+          Download Youtube Thumbnail
+        </a>
+        <a
+          className="nav-link active"
+          aria-current="pagez"
+          href="/download-instagram-image"
+        >
+          Download Instagram Photo
         </a>
       </nav>
     </>
